@@ -16,6 +16,13 @@
     <script type="module" src="js/main.js"></script>
 
     <script>
+        // Catch and display errors during development
+        window.onerror = function (message, source, lineno, colno, error) {
+            alert(`JS Error: ${message}\nLine: ${lineno}`);
+            console.error(error);
+        };
+    </script>
+    <script>
         // Simple loading overlay hider
         window.addEventListener('load', () => {
             const loading = document.getElementById('loading');

@@ -9,9 +9,10 @@ export default class Moon {
 
     init() {
         const loader = new THREE.TextureLoader();
+        loader.crossOrigin = 'anonymous';
         const texture = loader.load('https://upload.wikimedia.org/wikipedia/commons/d/db/Moonmap_from_clementine_data.png');
 
-        const material = new THREE.MeshPhongMaterial({ map: texture });
+        const material = new THREE.MeshPhongMaterial({ map: texture, color: 0x888888 });
         const geometry = new THREE.SphereGeometry(30, 64, 64);
 
         this.mesh = new THREE.Mesh(geometry, material);
